@@ -38,6 +38,7 @@ function apiFacade() { /* Insert utility-methods from a latter step (d) here (RE
         var base64Url = getToken().split('.')[1];
         var base64 = base64Url.replace('-', '+').replace('_', '/');
         if (JSON.parse(atob(base64)).roles === "user") {
+            console.log(JSON.parse(atob(base64)))
             return fetch(URL + "/api/info/user", options).then(handleHttpErrors);
         } else {
             return fetch(URL + "/api/info/admin", options).then(handleHttpErrors);
@@ -65,9 +66,14 @@ function apiFacade() { /* Insert utility-methods from a latter step (d) here (RE
         return opts;
     }
 
-    const fetchExternData = () => {
+    const fetchKanye = () => {
         const options = makeOptions("GET", true); // True add's the token
-        return fetch(URL + "/api/info/extern", options).then(handleHttpErrors);
+        return fetch(URL + "/api/info/kanye", options).then(handleHttpErrors);
+    }
+
+    const fetchDog = () => {
+        const options = makeOptions("GET", true); // True add's the token
+        return fetch(URL + "/api/info/dog", options).then(handleHttpErrors);
     }
 
 
@@ -79,7 +85,8 @@ function apiFacade() { /* Insert utility-methods from a latter step (d) here (RE
         login,
         logout,
         fetchData,
-        fetchExternData
+        fetchKanye,
+        fetchDog
     }
 }
 const loginFacade = apiFacade();

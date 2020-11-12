@@ -13,7 +13,11 @@ code {
 }
 
 img {
-  width: 250px;
+  width: 400px;
+}
+
+em {
+  font-size: xx-large;
 }
 
 ul.header {
@@ -21,7 +25,7 @@ ul.header {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: darkcyan;
  }
  
  ul.header li { float: left;}
@@ -33,5 +37,5 @@ ul.header {
   padding: 14px 16px;
   text-decoration: none;
  }
- ul.header li a:hover:not(.active) { background-color: #111;}
- .active { background-color: #4CAF50;}
+ ul.header li a:hover:not(.active) { background-color: darkgreen;}
+ .active { background-color:darkgoldenrod}
